@@ -16,23 +16,25 @@ export default function Home_hello() {
   }
 
   useEffect(() => {
-    gsap.fromTo(
-      ".reveal",
-      { opacity: 0, y: 200 }, // Start state
-      {
-        opacity: 1,
-        stagger: 0.3,
-        y: 0, // End state
-        duration: 1,
-      }
-    );
+    setTimeout(() => {
+      gsap.fromTo(
+        ".reveal",
+        { opacity: 0, y: 200 }, // Start state
+        {
+          opacity: 1,
+          stagger: 0.3,
+          y: 0, // End state
+          duration: 1,
+        }
+      );
+    }, 200);
 
     gsap.fromTo(
       ".image",
       { opacity: 0 }, // Start state
       {
         opacity: 1,
-        delay: 1,
+        delay: 1.2,
 
         duration: 2,
         onComplete: () => {

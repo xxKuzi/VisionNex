@@ -98,7 +98,7 @@ export default function Navbar() {
       )}
       {dropDown && (
         <div className="flex flex-col-reverse absolute left-0 duration-300 top-0 rounded-md p-8 text-xl w-full h-[50%] z-20 bg-white">
-          <ul className="flex flex-col ml-[5vw] font-semibold gap-6 mb-[5vw] text-2xl">
+          <ul className="flex flex-col ml-[5vw] font-semibold gap-4 mb-[5vw] text-2xl">
             <button onClick={() => setDropDown((prev) => !prev)}>
               <Link to="/">
                 <li className="text-left">Home</li>
