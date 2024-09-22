@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    @apply scroll-smooth;
+  }
+
+  .container {
+    @apply flex flex-col items-center rounded-xl border-2 border-gray-300 bg-gray-200 px-10 font-semibold;
+  }
+
+  .subContainer {
+    @apply flex flex-col items-center rounded-xl bg-black px-10 py-5;
+  }
+
+  .section {
+    @apply rounded-lg p-5;
+  }
+
+  .section__disabled {
+    @apply bg-gray-200 text-gray-500;
+  }
+
+  .section__lighter {
+    @apply bg-gray-300 text-gray-900;
+  }
+
+  .section__darker {
+    @apply bg-gray-700 text-white;
+  }
+  .br-gray {
+    @apply border-2 border-gray-300;
+  }
+
+  .br-blue {
+    @apply border-2 border-blue-300;
+  }
+
+  .headline__huge {
+    @apply md:text-9xl text-7xl;
+  }
+
+  .headline__extraBig {
+    @apply md:text-7xl text-5xl;
+  }
+
+  .headline__big {
+    @apply md:text-4xl text-2xl;
+  }
+
+  .headline {
+    @apply md:text-3xl text-xl;
+  }
+
+  .headline__small {
+    @apply md:text-2xl text-lg;
+  }
+
+  .headline__extraSmall {
+    @apply md:text-xl text-base;
+  }
+
+  .text {
+    @apply md:text-lg text-sm;
+  }
+
+  .text__small {
+    @apply md:text-base text-[10px];
+  }
+
+  .input {
+    @apply mt-1 rounded-lg border border-blue-500 bg-white px-3 py-2;
+  }
+
+  .input__small {
+    @apply h-8 w-36 rounded-lg border border-blue-500 px-2;
+  }
+
+  .input__normal {
+    @apply h-10 w-72 rounded-lg border border-blue-500 px-3;
+  }
+
+  .input__midText {
+    @apply rounded-lg border border-blue-500 px-3 text-center;
+  }
+
+  .button__big {
+    @apply rounded-lg px-8 py-6;
+  }
+
+  .button {
+    @apply rounded-lg px-6 py-[12px];
+  }
+
+  .button__small {
+    @apply rounded-lg px-4 py-2;
+  }
+
+  .button__extraSmall {
+    @apply rounded-lg px-2 py-1;
+  }
+
+  .button__ultraSmall {
+    @apply rounded-lg px-1 py-0.5;
+  }
+
+  .button__submit {
+    @apply bg-indigo-600 text-white duration-300 hover:scale-[1.03] hover:bg-indigo-700;
+  }
+
+  .button__positive {
+    @apply bg-blue-600 text-white hover:bg-blue-500  duration-300;
+  }
+
+  .button__negative {
+    @apply bg-red-600 text-white;
+  }
+
+  .button__black {
+    @apply bg-black text-white;
+  }
+
+  .div__inRow {
+    @apply flex items-center;
+  }
+
+  .div__inColumn {
+    @apply flex flex-col justify-center;
+  }
+
+  .error {
+    @apply max-w-md;
+  }
+
+  .link {
+    @apply cursor-pointer text-lg underline;
+  }
+
+  .endText {
+    @apply mb-3 mt-8;
+  }
+
+  .list {
+    @apply w-72;
+  }
+
+  .material-symbols-outlined {
+    @apply text-white;
+  }
+}
