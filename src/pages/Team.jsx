@@ -27,9 +27,9 @@ export default function Team() {
     },
   ];
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center ">
       {windowSize !== 2 && (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col items-center justify-center h-screen">
           <p className="mt-6 text-center headline__big font-semibold">
             Our Team
           </p>
@@ -44,14 +44,15 @@ export default function Team() {
               />
             ))}
           </div>
+          <p className="md:text-3xl lg:text-5xl mt-[20vh]">
+            ...Day one or one day?
+          </p>
         </div>
       )}
 
       {windowSize === 2 && (
-        <div className="flex flex-col">
-          <p className="mt-6 text-center headline__big font-semibold">
-            Our Team
-          </p>
+        <div className="flex flex-col items-center justify-center">
+          <p className="mt-6 text-center text-4xl font-semibold">Our Team</p>
           <div className="mt-6 mx-auto p-8 flex justify-center border-2 rounded-xl gap-6 flex-wrap">
             {data.map((item, i) => (
               <Card
@@ -63,6 +64,7 @@ export default function Team() {
               />
             ))}
           </div>
+          <p className="text-2xl mt-8">...Day one or one day?</p>
         </div>
       )}
     </div>

@@ -88,7 +88,7 @@ export default function Navbar() {
 
           <div className="flex flex-row">
             <button
-              className="button__extraSmall px-4 button__submit"
+              className="button__extraSmall px-4 bg-brand-darker text-white"
               onClick={() => setDropDown((prev) => !prev)}
             >
               Menu
@@ -97,8 +97,8 @@ export default function Navbar() {
         </div>
       )}
       {dropDown && (
-        <div className="flex flex-col absolute left-0 top-0 rounded-md p-8 text-xl w-full h-[50%] z-20 bg-white">
-          <ul className="flex flex-col">
+        <div className="flex flex-col-reverse absolute left-0 duration-300 top-0 rounded-md p-8 text-xl w-full h-[50%] z-20 bg-white">
+          <ul className="flex flex-col ml-[5vw] font-semibold gap-6 mb-[5vw] text-2xl">
             <button onClick={() => setDropDown((prev) => !prev)}>
               <Link to="/">
                 <li className="text-left">Home</li>
@@ -119,14 +119,11 @@ export default function Navbar() {
                 <li className="text-left">Team</li>
               </Link>
             </button>
-            <button onClick={() => setDropDown((prev) => !prev)}>
-              <ImCross className="absolute top-4 right-4 h-8" />
-            </button>
-            <img
-              src="logo nobg.png"
-              className="absolute bottom-4 right-4 h-16"
-            />
           </ul>
+          <button onClick={() => setDropDown((prev) => !prev)}>
+            <ImCross className="absolute top-4 right-4 h-8" />
+          </button>
+          <img src="logo nobg.png" className="absolute left-4 top-4 h-16" />
         </div>
       )}
     </div>

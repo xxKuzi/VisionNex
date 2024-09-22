@@ -4,6 +4,7 @@ import Cards from "../components/Product_Cards";
 import Components from "../components/Product_Components";
 import Model from "../components/Product_Model";
 import Carousel from "../components/Product_Carousel";
+import Description from "../components/Product_Description";
 
 import { useData } from "../parts/Memory";
 
@@ -63,6 +64,7 @@ export default function Product() {
         </section>
 
         <Model version={"15.3"} />
+        <Description />
         <Carousel data={data.product} />
       </div>
     </div>

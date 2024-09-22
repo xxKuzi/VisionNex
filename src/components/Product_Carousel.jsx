@@ -30,7 +30,7 @@ const Carousel = ({ data }) => {
   };
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto py-8">
+    <div className="relative w-full max-w-7xl mx-auto py-8 mt-64">
       <div className="flex min-h-[600px] justify-center items-center space-x-4 relative">
         {data.map((item, index) => {
           const isActive = index === currentIndex;
