@@ -65,7 +65,7 @@ const Carousel = ({ data }) => {
                 transform: positionClass,
               }}
             >
-              <Card key={index} cardData={item} />
+              <Card key={index} cardData={item} active={isActive} />
             </div>
           );
         })}
@@ -121,7 +121,7 @@ const Card = (props) => {
       rel="noopener noreferrer"
     >
       <div
-        className="flex hover:scale-[102%] duration-300 px-4 py-2 w-full h-[500px] flex-col bg-cover justify-start items-lefts border-2 rounded-xl"
+        className="flex hover:scale-[102%] duration-300 px-4 py-2 w-full h-[500px] flex-col bg-cover justify-between items-start border-2 rounded-xl"
         style={{
           backgroundImage: `url(${image})`,
           backgroundPosition:
@@ -129,8 +129,36 @@ const Card = (props) => {
           color: text === 1 ? "white" : "black",
         }}
       >
-        <p>{source}</p>
-        <p className="headline__small font-semibold">{title}</p>
+        <div className="bg-white rounded-xl px-2 py-1">
+          <p className=" text-black fot-bold">{source}</p>
+        </div>
+        <p
+          style={
+            props.active
+              ? {
+                  //fontSize: props.active === true ? "30px" : "0px",
+                  opacity: 1,
+                  transition:
+                    "opacity 0.5s ease-in-out, background-color 1.5s ease-in-out",
+                  transitionDelay: "0.4s",
+                  backgroundColor:
+                    text === 1 ? "rgb(0,0,0, 0.5)" : "rgba(255, 255, 255, 0.7)",
+                  border: "3px solid " + (text === 1 ? "black" : "white"),
+                }
+              : {
+                  //fontSize: props.active === true ? "30px" : "0px",
+                  opacity: 0,
+                  transition: " 0.2s ease-in-out",
+                  transitionDelay: "0s",
+                  backgroundColor:
+                    text === 1 ? "rgb(0,0,0, 1)" : "rgba(255, 255, 255, 1)",
+                  border: "3px solid " + (text === 1 ? "black" : "white"),
+                }
+          }
+          className="headline__small font-bold rounded-xl px-2 py-1 "
+        >
+          {title}
+        </p>
       </div>
     </a>
   );

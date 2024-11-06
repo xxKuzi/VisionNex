@@ -29,7 +29,7 @@ export default function Team() {
   return (
     <div className="flex flex-col items-center ">
       {windowSize !== 2 && (
-        <div className="flex flex-col items-center justify-center h-screen">
+        <div className="flex flex-col items-center justify-center min-h-screen">
           <p className="mt-6 text-center headline__big font-semibold">
             Our Team
           </p>

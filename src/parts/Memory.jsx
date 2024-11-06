@@ -66,8 +66,61 @@ export function Memory({ children }) {
         link: "https://news.samsung.com/cz/nejlepsi-mladi-inovatori-se-utkali-ve-finale-programu-solve-for-tomorrow",
         image: "samsung.jpg",
         position: 100,
+        text: 0,
+      },
+
+      {
+        title:
+          "Chytré brýle VisionNex: studentský projekt, který přináší zrak tam, kde chybí",
+        source: "samsung.com",
+
+        link: "https://news.samsung.com/cz/chytre-bryle-visionnex-studentsky-projekt-ktery-prinasi-zrak-tam-kde-chybi",
+        image:
+          "https://img.global.news.samsung.com/cz/wp-content/uploads/2024/09/3.jpg",
+        position: 0,
         text: 1,
       },
+      {
+        title:
+          "Umělá inteligence v rukou středoškoláků. Svými projekty pomáhají seniorům, autistům i nevidomým",
+        source: "refresher.cz",
+
+        link: "https://news.refresher.cz/158627-Umela-inteligence-v-rukou-stredoskolaku-Svymi-projekty-pomahaji-seniorum-autistum-i-nevidomym",
+        image: "zdarskydenik.jpg",
+        position: 50,
+        text: 0,
+      },
+      {
+        title: "Naši studenti se vydali do Paříže",
+        source: "spszr.cz",
+
+        link: "https://www.spszr.cz/aktivity-skoly/nasi-studenti-se-vydali-do-parize",
+        image:
+          "https://www.spszr.cz/image.php?nid=21276&oid=11512880&width=1500",
+        position: 50,
+        text: 1,
+      },
+      {
+        title:
+          "Unikátny nápad stredoškolákov: vymysleli okuliare pre nevidomých, predstavili ich priamo v Paríži počas paralympiády",
+        source: "aktuality.sk",
+
+        link: "https://www.aktuality.sk/clanok/Zm33DHL/unikatny-napad-stredoskolakov-vymysleli-okuliare-pre-nevidomych-predstavili-ich-priamo-v-parizi-pocas-paralympiady/",
+        image: "aktuality.png",
+        position: 50,
+        text: 0,
+      },
+
+      {
+        title: "Tým tří studentů ze Žďáru nad Sázavou zvítězil 🥇",
+        source: "linkedin.com",
+
+        link: "https://www.linkedin.com/posts/samsung-electronics-czech-republic-slovakia_solve-for-tomorrow-v%C3%ADt%C4%9Bzn%C3%BD-t%C3%BDm-visionnex-activity-7241798986695589888-QPPU/?originalSubdomain=cz",
+        image: "linkedin.png",
+        position: 50,
+        text: 1,
+      },
+
       {
         title:
           "Školáci ze Žďáru vymysleli chytré brýle pro nevidomé, svět mění ve zvuk",
@@ -95,7 +148,7 @@ export function Memory({ children }) {
         link: "https://www.ceskaocnioptika.cz/2024/05/20/hlasove-bryle-pro-nevidome/",
         image: "zdarskydenik.jpg",
         position: 90,
-        text: 1,
+        text: 0,
       },
 
       {

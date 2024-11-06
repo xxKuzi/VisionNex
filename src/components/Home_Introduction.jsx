@@ -1,21 +1,57 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useData } from "../parts/Memory";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { browserName, browserVersion } from "react-device-detect";
 //import Card from "./Home_Card";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home_hello() {
   const { windowSize } = useData();
+  const [badBrowser, setBadBrowser] = useState(false);
+  const cardRef = useRef(null);
 
   ScrollTrigger.config({
     ignoreMobileResize: true,
   });
-  if (windowSize === 5) {
-    return;
-  }
+  useEffect(() => {
+    console.log(navigator.userAgent);
+    console.log("browser", browserName);
+    if (browserName === "Mobile Safari") {
+      setBadBrowser(true);
+    }
+  }, [navigator]);
+
+  const smoothScrollTo = (element, duration) => {
+    const targetPosition =
+      element.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition - 100; //-100 because of I don't have an ref to moving element
+    let startTime = null;
+
+    const animation = (currentTime) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    };
+
+    const ease = (t, b, c, d) => {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+
+    requestAnimationFrame(animation);
+  };
 
   useEffect(() => {
+    if (windowSize === 5) {
+      return;
+    }
+
     setTimeout(() => {
       gsap.fromTo(
         ".reveal",
@@ -85,6 +121,7 @@ export default function Home_hello() {
 
     {
       windowSize === 2 &&
+        badBrowser === false &&
         gsap.fromTo(
           ".moving",
           { opacity: 1, y: 0 }, // Start state
@@ -139,20 +176,55 @@ export default function Home_hello() {
 
     {
       windowSize === 2 &&
+        badBrowser &&
         gsap.fromTo(
-          ".card",
-          { opacity: 0, y: -500 }, // Start state
+          ".move",
+          { opacity: 0, y: 150 }, // Start state
           {
-            opacity: 1,
+            delay: 1.5,
+            duration: 1,
+            opacity: 0.5,
             y: 0,
-            scrollTrigger: {
-              trigger: ".wall",
-              start: "top 0%", // When the top of the box reaches 50% of the viewport
-              end: "bottom 10%", // Can tweak this for the exact timing you want
-              scrub: true,
+            ease: "power2.in",
+
+            onComplete: () => {
+              {
+                gsap.to(".move", { opacity: 1 });
+              }
             },
           }
         );
+    }
+
+    {
+      windowSize === 2 && badBrowser
+        ? gsap.fromTo(
+            ".card",
+            { opacity: 0, y: -500 }, // Start state
+            {
+              opacity: 1,
+              y: 0,
+              duration: 2,
+              scrollTrigger: {
+                trigger: ".wall",
+                start: "top 0%", // When the top of the box reaches 50% of the viewport
+              },
+            }
+          )
+        : gsap.fromTo(
+            ".card",
+            { opacity: 0, y: -500 }, // Start state
+            {
+              opacity: 1,
+              y: 0,
+              scrollTrigger: {
+                trigger: ".wall",
+                start: "top 0%", // When the top of the box reaches 50% of the viewport
+                end: "bottom 10%", // Can tweak this for the exact timing you want
+                scrub: true,
+              },
+            }
+          );
     }
 
     gsap.fromTo(
@@ -188,12 +260,21 @@ export default function Home_hello() {
           />
           <div className="h-[200px]"></div>
         </div>
+        {badBrowser && (
+          <button
+            className="opacity-0 move mx-auto button__positive rounded-xl px-6 py-1"
+            onClick={() => smoothScrollTo(cardRef.current, 500)}
+          >
+            Go down ↓
+          </button>
+        )}
       </div>
 
       <div className="wall flex flex-col items-center justify-center w-full lg:mt-32 mt-64">
         <div className="w-full bg-gradient-to-b h-[400px] z-30 from-brand to-white flex flex-col items-center justify-center"></div>
         <div className=" bg-white  w-full z-10 h-[400px]"></div>
       </div>
+      <div ref={cardRef}></div>
       <Card />
     </div>
   );
