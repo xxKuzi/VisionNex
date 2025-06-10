@@ -48,199 +48,217 @@ export default function Home_hello() {
   };
 
   useEffect(() => {
+    // Early return for windowSize 5
     if (windowSize === 5) {
       return;
     }
 
-    setTimeout(() => {
-      gsap.fromTo(
+    // Kill all existing ScrollTrigger instances to prevent conflicts
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+    // Store timeline references for cleanup
+    const timelines = [];
+
+    // Initial reveal animation with delay
+    const revealTimeout = setTimeout(() => {
+      const revealTl = gsap.fromTo(
         ".reveal",
-        { opacity: 0, y: 200 }, // Start state
+        { opacity: 0, y: 200 },
         {
           opacity: 1,
           stagger: 0.3,
-          y: 0, // End state
+          y: 0,
           duration: 1,
         }
       );
+      timelines.push(revealTl);
     }, 200);
 
-    gsap.fromTo(
+    // Image fade in animation
+    const imageTl = gsap.fromTo(
       ".image",
-      { opacity: 0 }, // Start state
+      { opacity: 0 },
       {
         opacity: 1,
         delay: 1.2,
-
         duration: 2,
         onComplete: () => {
-          gsap.to(
-            ".image",
-
-            { opacity: 1, duration: 1 }
-          );
+          const imageCompleteTl = gsap.to(".image", {
+            opacity: 1,
+            duration: 1,
+          });
+          timelines.push(imageCompleteTl);
         },
       }
     );
+    timelines.push(imageTl);
 
-    {
-      windowSize === 0 &&
-        gsap.fromTo(
-          ".moving",
-          { opacity: 1, y: 0 }, // Start state
-          {
-            opacity: 1,
-            y: 800,
-            scrollTrigger: {
-              trigger: ".moving",
-              start: "top 30%", // When the top of the box reaches 50% of the viewport
-              end: "bottom -70%", // Can tweak this for the exact timing you want
-              scrub: true,
-            },
-          }
-        );
+    // Moving element animations based on windowSize
+    if (windowSize === 0) {
+      gsap.fromTo(
+        ".moving",
+        { opacity: 1, y: 0 },
+        {
+          opacity: 1,
+          y: 800,
+          scrollTrigger: {
+            trigger: ".moving",
+            start: "top 30%",
+            end: "bottom -70%",
+            scrub: true,
+          },
+        }
+      );
+    } else if (windowSize === 1) {
+      gsap.fromTo(
+        ".moving",
+        { opacity: 1, y: 0 },
+        {
+          opacity: 1,
+          y: 850,
+          scrollTrigger: {
+            trigger: ".moving",
+            start: "top 40%",
+            end: "bottom -1000px",
+            scrub: true,
+          },
+        }
+      );
+    } else if (windowSize === 2 && !badBrowser) {
+      gsap.fromTo(
+        ".moving",
+        { opacity: 1, y: 0 },
+        {
+          opacity: 1,
+          y: 850,
+          scrollTrigger: {
+            trigger: ".moving",
+            start: "top 27.5%",
+            end: "bottom -1000px",
+            scrub: true,
+          },
+        }
+      );
     }
 
-    {
-      windowSize === 1 &&
-        gsap.fromTo(
-          ".moving",
-          { opacity: 1, y: 0 }, // Start state
-          {
-            opacity: 1,
-            y: 850,
-            scrollTrigger: {
-              trigger: ".moving",
-              start: "top 40%", // When the top of the box reaches 50% of the viewport
-              end: "bottom -1000px ", // Can tweak this for the exact timing you want
-              scrub: true,
-            },
-          }
-        );
-    }
-
-    {
-      windowSize === 2 &&
-        badBrowser === false &&
-        gsap.fromTo(
-          ".moving",
-          { opacity: 1, y: 0 }, // Start state
-          {
-            opacity: 1,
-            y: 850,
-            scrollTrigger: {
-              trigger: ".moving",
-              start: "top 27.5%", // When the top of the box reaches 50% of the viewport
-              end: "bottom -1000px ", // Can tweak this for the exact timing you want
-              scrub: true,
-            },
-          }
-        );
-    }
-
-    {
-      windowSize === 0 &&
-        gsap.fromTo(
-          ".card",
-          { opacity: 0, y: -1000 }, // Start state
-          {
-            opacity: 1,
-            y: -300,
-            scrollTrigger: {
-              trigger: ".wall",
-              start: "top 30%", // When the top of the box reaches 50% of the viewport
-              end: "bottom 10%", // Can tweak this for the exact timing you want
-              scrub: true,
-            },
-          }
-        );
-    }
-
-    {
-      windowSize === 1 &&
-        gsap.fromTo(
-          ".card",
-          { opacity: 0, y: -500 }, // Start state
-          {
-            opacity: 1,
-            y: 0,
-            scrollTrigger: {
-              trigger: ".wall",
-              start: "top 0%", // When the top of the box reaches 50% of the viewport
-              end: "bottom 10%", // Can tweak this for the exact timing you want
-              scrub: true,
-            },
-          }
-        );
-    }
-
-    {
-      windowSize === 2 &&
-        badBrowser &&
-        gsap.fromTo(
+    // Card animations based on windowSize
+    if (windowSize === 0) {
+      gsap.fromTo(
+        ".card",
+        { opacity: 0, y: -700 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: ".wall",
+            start: "top 10%",
+            end: "bottom -100%",
+            scrub: true,
+          },
+        }
+      );
+    } else if (windowSize === 1) {
+      gsap.fromTo(
+        ".card",
+        { opacity: 0, y: -500 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: {
+            trigger: ".wall",
+            start: "top 0%",
+            end: "bottom 10%",
+            scrub: true,
+          },
+        }
+      );
+    } else if (windowSize === 2) {
+      if (badBrowser) {
+        // Special animation for bad browsers
+        const moveTl = gsap.fromTo(
           ".move",
-          { opacity: 0, y: 150 }, // Start state
+          { opacity: 0, y: 150 },
           {
             delay: 1.5,
             duration: 1,
             opacity: 0.5,
             y: 0,
             ease: "power2.in",
-
             onComplete: () => {
-              {
-                gsap.to(".move", { opacity: 1 });
-              }
+              const moveCompleteTl = gsap.to(".move", { opacity: 1 });
+              timelines.push(moveCompleteTl);
             },
           }
         );
+        timelines.push(moveTl);
+
+        // Card animation for bad browsers (no scrub)
+        gsap.fromTo(
+          ".card",
+          { opacity: 0, y: -500 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 2,
+            scrollTrigger: {
+              trigger: ".wall",
+              start: "top 0%",
+            },
+          }
+        );
+      } else {
+        // Normal card animation for good browsers
+        gsap.fromTo(
+          ".card",
+          { opacity: 0, y: -500 },
+          {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+              trigger: ".wall",
+              start: "top 0%",
+              end: "bottom 10%",
+              scrub: true,
+            },
+          }
+        );
+      }
     }
 
-    {
-      windowSize === 2 && badBrowser
-        ? gsap.fromTo(
-            ".card",
-            { opacity: 0, y: -500 }, // Start state
-            {
-              opacity: 1,
-              y: 0,
-              duration: 2,
-              scrollTrigger: {
-                trigger: ".wall",
-                start: "top 0%", // When the top of the box reaches 50% of the viewport
-              },
-            }
-          )
-        : gsap.fromTo(
-            ".card",
-            { opacity: 0, y: -500 }, // Start state
-            {
-              opacity: 1,
-              y: 0,
-              scrollTrigger: {
-                trigger: ".wall",
-                start: "top 0%", // When the top of the box reaches 50% of the viewport
-                end: "bottom 10%", // Can tweak this for the exact timing you want
-                scrub: true,
-              },
-            }
-          );
-    }
-
+    // Text fade in animation
     gsap.fromTo(
       ".text",
-      { opacity: 0 }, // Start state
+      { opacity: 0 },
       {
         opacity: 1,
         duration: 1,
         stagger: 0.5,
         scrollTrigger: {
           trigger: ".text",
-          start: "top 30%", // When the top of the box reaches 50% of the viewport
+          start: "top 30%",
         },
       }
     );
-  }, [windowSize]);
+
+    // Refresh ScrollTrigger to ensure proper calculations
+    ScrollTrigger.refresh();
+
+    // Cleanup function
+    return () => {
+      // Clear timeout
+      clearTimeout(revealTimeout);
+
+      // Kill all timelines
+      timelines.forEach((tl) => {
+        if (tl && tl.kill) {
+          tl.kill();
+        }
+      });
+
+      // Kill all ScrollTrigger instances
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [windowSize, badBrowser]); // Added badBrowser to dependencies
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <div className="bg-gradient-to-b from-black to-white w-full flex flex-col items-center">
