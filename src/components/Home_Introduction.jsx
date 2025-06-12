@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useData } from "../parts/Memory";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { browserName, browserVersion } from "react-device-detect";
-//import Card from "./Home_Card";
+import { browserName } from "react-device-detect";
+
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Home_hello() {
+export default function HomeHello() {
   const { windowSize } = useData();
   const [badBrowser, setBadBrowser] = useState(false);
   const cardRef = useRef(null);
@@ -14,6 +14,7 @@ export default function Home_hello() {
   ScrollTrigger.config({
     ignoreMobileResize: true,
   });
+
   useEffect(() => {
     console.log(navigator.userAgent);
     console.log("browser", browserName);
@@ -26,7 +27,7 @@ export default function Home_hello() {
     const targetPosition =
       element.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition - 100; //-100 because of I don't have an ref to moving element
+    const distance = targetPosition - startPosition - 100;
     let startTime = null;
 
     const animation = (currentTime) => {
@@ -258,57 +259,81 @@ export default function Home_hello() {
       // Kill all ScrollTrigger instances
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [windowSize, badBrowser]); // Added badBrowser to dependencies
+  }, [windowSize, badBrowser]);
+
   return (
-    <div className="flex flex-col justify-center items-center w-full">
-      <div className="bg-gradient-to-b from-black to-white w-full flex flex-col items-center">
-        <div className="moving relative flex flex-col  mt-[200px] justify-center items-start">
+    <main className="flex flex-col justify-center items-center w-full">
+      {/* Hidden SEO content - invisible but readable by search engines */}
+      <div className="sr-only">
+        <h1>Vision Nexes - AR/VR Technology Company</h1>
+        <p>
+          We create cutting-edge augmented and virtual reality solutions,
+          specializing in next-generation smart glasses and immersive digital
+          experiences.
+        </p>
+      </div>
+
+      <header className="bg-gradient-to-b from-black to-white w-full flex flex-col items-center">
+        <section className="moving relative flex flex-col mt-[200px] justify-center items-start">
           <div className="h-[100px]"></div>
-          <p className="opacity-0 reveal text-8xl md:text-[220px] text-left ">
+          <h2 className="opacity-0 reveal text-8xl md:text-[220px] text-left">
             Hi
-          </p>
-          <p className="opacity-0 reveal lg:mt-6 text-4xl md:text-6xl lg:text-7xl ml-1 md:ml-[6px] lg:ml-3 ">
+          </h2>
+          <h3 className="opacity-0 reveal lg:mt-6 text-4xl md:text-6xl lg:text-7xl ml-1 md:ml-[6px] lg:ml-3">
             We are
-          </p>
+          </h3>
           <div className="lg:w-[500px] md:w-[400px] w-[300px]"></div>
 
           <img
-            className="absolute  opacity-0 lg:h-[170px] h-[110px] -right-[35px] lg:-right-[100px] image bottom-[165px]" //opacity-0 -left-5 image
+            className="absolute opacity-0 lg:h-[170px] h-[110px] -right-[35px] lg:-right-[100px] image bottom-[165px]"
             src="logo nobg.png"
+            alt="Vision Nexes company logo"
+            loading="lazy"
           />
+
           <div className="h-[200px]"></div>
-        </div>
+        </section>
         {badBrowser && (
           <button
             className="opacity-0 move mx-auto button__positive rounded-xl px-6 py-1"
             onClick={() => smoothScrollTo(cardRef.current, 500)}
+            aria-label="Scroll to product information"
           >
             Go down ↓
           </button>
         )}
-      </div>
+      </header>
 
-      <div className="wall flex flex-col items-center justify-center w-full lg:mt-32 mt-64">
+      <section className="wall flex flex-col items-center justify-center w-full lg:mt-32 mt-64">
         <div className="w-full bg-gradient-to-b h-[400px] z-30 from-brand to-white flex flex-col items-center justify-center"></div>
-        <div className=" bg-white  w-full z-10 h-[400px]"></div>
-      </div>
+        <div className="bg-white w-full z-10 h-[400px]"></div>
+      </section>
       <div ref={cardRef}></div>
-      <Card />
-    </div>
+      <ProductCard windowSize={windowSize} />
+    </main>
   );
 }
 
-function Card() {
-  const { windowSize } = useData();
+function ProductCard({ windowSize }) {
   return (
-    <div className="card z-20">
+    <article className="card z-20">
       {windowSize === 0 && (
-        <div className="border-2 duration-300 group  mt-64 rounded-xl w-[50vw] flex px-6 py-4 flex-col justify-center items-center">
-          <img src="glasses.png" className="w-[30vw]" />
-          <p className="mt-4 text-7xl text">Vision Nexes</p>
+        <div className="border-2 duration-300 group mt-64 rounded-xl w-[50vw] flex px-6 py-4 flex-col justify-center items-center">
+          <img
+            src="glasses.png"
+            className="w-[30vw]"
+            alt="Vision Nexes AR Smart Glasses"
+            loading="lazy"
+            width="300"
+            height="200"
+          />
+          <h4 className="mt-4 text-7xl text">Vision Nexes</h4>
           <p className="mt-4 text">Our latest product</p>
           <a href="/product">
-            <button className="text text-[15px] bg-white border-2 text-brand active:bg-white active:text-brand border-gray-300 hover:bg-brand hover:text-white  duration-300 group-hover:border-brand  text-lg button__small mt-4">
+            <button
+              className="text text-[15px] bg-white border-2 text-brand active:bg-white active:text-brand border-gray-300 hover:bg-brand hover:text-white duration-300 group-hover:border-brand text-lg button__small mt-4"
+              aria-label="Learn more about Vision Nexes AR glasses"
+            >
               Learn more
             </button>
           </a>
@@ -316,17 +341,27 @@ function Card() {
       )}
 
       {windowSize !== 0 && (
-        <div className="border-2  rounded-xl w-[85vw] flex px-6 py-4 flex-col justify-center items-center">
-          <img src="glasses.png" className="w-[60vw]" />
-          <p className="mt-4 text-4xl md:text-7xl">Vision Nexes</p>
+        <div className="border-2 rounded-xl w-[85vw] flex px-6 py-4 flex-col justify-center items-center">
+          <img
+            src="glasses.png"
+            className="w-[60vw]"
+            alt="Vision Nexes AR Smart Glasses"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+          <h4 className="mt-4 text-4xl md:text-7xl">Vision Nexes</h4>
           <p className="mt-4 md:text-xl">Our latest product</p>
           <a href="/product">
-            <button className="button__extraSmall border-2 border-brand bg-white text-brand hover:bg-brand hover:text-white md:button__small md:text-xl text-[15px] mt-4 button__positive">
+            <button
+              className="button__extraSmall border-2 border-brand bg-white text-brand hover:bg-brand hover:text-white md:button__small md:text-xl text-[15px] mt-4 button__positive"
+              aria-label="Learn more about Vision Nexes AR glasses features and specifications"
+            >
               Learn more
             </button>
           </a>
         </div>
       )}
-    </div>
+    </article>
   );
 }
