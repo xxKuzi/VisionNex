@@ -82,6 +82,16 @@ export function Memory({ children }) {
       },
       {
         title:
+          "Studenti vymysleli chytré brýle pro nevidomé",
+        source: "ct24.cz",
+
+        link: "https://ct24.ceskatelevize.cz/video/studenti-vymysleli-chytre-bryle-pro-nevidome-225707",
+        image: "ct24.png",
+        position: 50,
+        text: 0,
+      },
+      {
+        title:
           "Umělá inteligence v rukou středoškoláků. Svými projekty pomáhají seniorům, autistům i nevidomým",
         source: "refresher.cz",
 
