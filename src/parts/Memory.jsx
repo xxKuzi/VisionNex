@@ -120,6 +120,17 @@ export function Memory({ children }) {
         position: 50,
         text: 0,
       },
+      {
+        title: 'Samsung představuje vítěze prvního evropského kola soutěže Solve for Tomorrow. Vyhráli i Češi.',
+        source: "news.samsung.com",
+
+        link: "https://news.samsung.com/cz/samsung-predstavuje-viteze-prvniho-evropskeho-kola-souteze-solve-for-tomorrow-vyhrali-i-cesi",
+        image: "europe_2.png",
+        text: 0,
+        position: 50,
+      },
+
+      
 
       {
         title: "Tým tří studentů ze Žďáru nad Sázavou zvítězil 🥇",
@@ -129,6 +140,14 @@ export function Memory({ children }) {
         image: "linkedin.png",
         position: 50,
         text: 1,
+      },
+      {
+        title: 'Samsung zná finalisty prvního celoevropského kola soutěže Solve for Tomorrow. Jsou mezi nimi Češi.',
+        source: "news.samsung.com",
+
+        link: "https://news.samsung.com/cz/samsung-zna-finalisty-prvniho-celoevropskeho-kola-souteze-solve-for-tomorrow-jsou-mezi-nimi-cesi",
+        image: "europe.png",
+        text: 0,
       },
 
       {
@@ -196,6 +215,11 @@ export function Memory({ children }) {
         year: "September 2024",
         event: "Testing in Paris with Heejin",
         image: "paris.jpg",
+      },
+      {
+        year: "October 2025",
+        event: "Winning in European Samsung SFT ",
+        image: "europe_2.png",
       },
     ],
     timeline: [
