@@ -13,14 +13,14 @@ export default function References() {
       <div className="flex flex-col items-center justify-center overflow-x-hidden">
         <div className="flex flex-col w-[85vw] lg:w-[70vw] mt-8 items-start justify-center">
           <p className="ml-1">How we got there?</p>
-          <p className="md:text-7xl text-5xl ">Our Journey</p>
+          <h1 className="md:text-7xl text-5xl font-normal">Our Journey</h1>
         </div>
         <Journey data={data.journey} />
         <Timeline data={data.timeline} />
 
         <div className="flex flex-col w-[85vw] lg:w-[70vw] mt-[150px] items-start justify-center">
           <p>Articles</p>
-          <p className="md:text-7xl text-5xl ">Wrote about us</p>
+          <h2 className="md:text-7xl text-5xl font-normal">Wrote about us</h2>
         </div>
 
         <Carousel data={data.articles} />

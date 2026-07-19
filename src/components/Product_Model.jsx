@@ -76,7 +76,12 @@ export default function Product_Model({ version }) {
 
   return (
     <div ref={containerRef} className="h-[80vh] w-screen relative bg-white">
-      <Canvas>
+      <Canvas
+        role="img"
+        tabIndex="0"
+        aria-label="3D interactive model of VisionNex Smart Glasses. You can drag to rotate the model to inspect it from all angles."
+        className="focus-visible:outline focus-visible:outline-blue-500"
+      >
         <Suspense fallback={null}>
           <ambientLight intensity={0.3} />
           <spotLight

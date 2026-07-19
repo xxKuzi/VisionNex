@@ -45,22 +45,27 @@ export default function Product_Components() {
           <img
             className="component absolute -top-[15vh] left-[30vw]"
             src="camera.png"
+            alt="Camera sensor hardware"
           ></img>
           <img
             className="component absolute -top-[15vh] -left-[30vw]"
             src="battery.png"
+            alt="Rechargeable battery power unit"
           ></img>
           <img
             className="component absolute top-[25vh] -left-[25vw]"
             src="elevenlabs.png"
+            alt="ElevenLabs AI voice integration"
           ></img>
           <img
             className="component absolute top-[20vh] left-[25vw]"
             src="chatgpt.png"
+            alt="ChatGPT artificial intelligence model"
           ></img>
           <img
             className="component absolute -z-10 top-[40vh] left-[15vw]"
             src="esp32.png"
+            alt="ESP32 microcontroller processing unit"
           ></img>
         </div>
       </div>
@@ -69,6 +74,7 @@ export default function Product_Components() {
         className="w-[40vw] md:w-[35vw] xl:w-[20vw] z-10 scale-0 lg:mt-0 md:mt-12 mt-[100px]"
         src="glasses.png"
         ref={boxRef}
+        alt="Assembled VisionNex Smart Glasses prototype"
       />
     </div>
   );

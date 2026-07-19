@@ -81,19 +81,22 @@ const Carousel = ({ data }) => {
           } rounded-full`}
           onClick={prevSlide}
           disabled={currentIndex === 0}
+          aria-label="Previous article"
         >
           <FaArrowLeft />
         </button>
 
-        <div className="px-16 flex">
+        <div className="px-16 flex items-center">
           {data.map((_, index) => (
-            <div
+            <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`cursor-pointer w-2 h-2 mx-[6px] rounded-full ${
+              className={`w-2 h-2 mx-[6px] rounded-full focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none ${
                 index === currentIndex ? "bg-black" : "bg-gray-300"
               }`}
-            ></div>
+              aria-label={`Go to article slide ${index + 1}`}
+              aria-current={index === currentIndex ? "true" : undefined}
+            />
           ))}
         </div>
 
@@ -103,6 +106,7 @@ const Carousel = ({ data }) => {
           } rounded-full`}
           onClick={nextSlide}
           disabled={currentIndex === data.length - 1}
+          aria-label="Next article"
         >
           <FaArrowRight />
         </button>
@@ -116,9 +120,10 @@ const Card = (props) => {
   return (
     <a
       href={link}
-      className="flex w-full"
+      className="flex w-full rounded-xl focus-visible:outline focus-visible:outline-blue-500"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={`Read article: ${title} from ${source}`}
     >
       <div
         className="flex hover:scale-[102%] duration-300 px-4 py-2 w-full h-[500px] flex-col bg-cover justify-between items-start border-2 rounded-xl"
@@ -130,13 +135,12 @@ const Card = (props) => {
         }}
       >
         <div className="bg-white rounded-xl px-2 py-1">
-          <p className=" text-black fot-bold">{source}</p>
+          <p className="text-black">{source}</p>
         </div>
         <p
           style={
             props.active
               ? {
-                  //fontSize: props.active === true ? "30px" : "0px",
                   opacity: 1,
                   transition:
                     "opacity 0.5s ease-in-out, background-color 1.5s ease-in-out",
@@ -146,7 +150,6 @@ const Card = (props) => {
                   border: "3px solid " + (text === 1 ? "black" : "white"),
                 }
               : {
-                  //fontSize: props.active === true ? "30px" : "0px",
                   opacity: 0,
                   transition: " 0.2s ease-in-out",
                   transitionDelay: "0s",
@@ -155,7 +158,7 @@ const Card = (props) => {
                   border: "3px solid " + (text === 1 ? "black" : "white"),
                 }
           }
-          className="headline__small font-bold rounded-xl px-2 py-1 "
+          className="headline__small font-bold rounded-xl px-2 py-1"
         >
           {title}
         </p>

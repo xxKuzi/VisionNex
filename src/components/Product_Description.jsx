@@ -50,21 +50,21 @@ export default function Product_Description() {
       {windowSize !== 2 && (
         <div className="flex flex-col items-center justify-center">
           <div className="w-[85vw] flex flex-col items-start">
-            <p className="ml-1 text-lg ">Principle</p>
-            <p className="text-7xl mb-16">How it works?</p>
+            <p className="ml-1 text-lg">Principle</p>
+            <h2 className="text-7xl mb-16 font-normal">How it works?</h2>
           </div>
           <div className="flex max-w-[90vw] flex-col justify-center items-center md:py-8 md:px-8 lg:py-16 lg:px-32 border-2 border-gray-200 duration-500 hover:border-brand rounded-xl">
-            <p className="headline text-7xl">Vision to your ears</p>
+            <h3 className="headline text-7xl font-normal">Vision to your ears</h3>
             <div className="flex items-center mt-16 justify-center gap-4">
               <div className="flex flex-col items-center justify-center">
-                <img className="rounded-xl" src="glasses vision.jpg " />
+                <img className="rounded-xl" src="glasses vision.jpg" alt="A person wearing VisionNex smart glasses outdoors" />
                 <p className="text mt-6 text-xl text-center">
                   Capture reality through a camera
                 </p>
               </div>
-              <img className="h-32" src="arrow.png" />
+              <img className="h-32" src="arrow.png" alt="" aria-hidden="true" />
               <div className="flex flex-col items-center justify-center">
-                <img className="w-64 rounded-xl" src="headphones.jpg" />
+                <img className="w-64 rounded-xl" src="headphones.jpg" alt="Over-ear headphones playing audio descriptions" />
                 <p className="text mt-6 text-xl text-center">
                   Play the description in the headphones
                 </p>
@@ -77,26 +77,27 @@ export default function Product_Description() {
       {windowSize === 2 && (
         <div className="flex flex-col items-center justify-center">
           <div className="w-[85vw] flex flex-col items-start">
-            <p className="ml-1 text-lg ">Principle</p>
-            <p className="text-5xl mb-12">How it works?</p>
+            <p className="ml-1 text-lg">Principle</p>
+            <h2 className="text-5xl mb-12 font-normal">How it works?</h2>
           </div>
           <div className="flex flex-col justify-center items-center border-2 px-4 py-6 border-gray-200 duration-500 hover:border-brand rounded-xl">
-            <p className="headline text-4xl font-semibold text-center w-[80vw]">
+            <h3 className="headline text-4xl font-semibold text-center w-[80vw]">
               Vision to your ears
-            </p>
+            </h3>
             <div className="flex flex-col items-center mt-12 justify-center gap-6">
               <div className="flex flex-col items-center justify-center">
                 <img
                   className="rounded-xl w-[300px]"
-                  src="glasses vision.jpg "
+                  src="glasses vision.jpg"
+                  alt="A person wearing VisionNex smart glasses outdoors"
                 />
                 <p className="text mt-2 text-lg text-center">
                   Capture reality through a camera
                 </p>
               </div>
-              <img className="h-32 rotate-90" src="arrow.png" />
+              <img className="h-32 rotate-90" src="arrow.png" alt="" aria-hidden="true" />
               <div className="flex flex-col items-center justify-center">
-                <img className="w-64 rounded-xl" src="headphones.jpg" />
+                <img className="w-64 rounded-xl" src="headphones.jpg" alt="Over-ear headphones playing audio descriptions" />
                 <p className="text mt-6 text-lg text-center">
                   Play the description in the headphones
                 </p>

@@ -262,7 +262,7 @@ export default function HomeHello() {
   }, [windowSize, badBrowser]);
 
   return (
-    <main className="flex flex-col justify-center items-center w-full">
+    <div className="flex flex-col justify-center items-center w-full">
       {/* Hidden SEO content - invisible but readable by search engines */}
       <div className="sr-only">
         <h1>Vision Nexes - AR/VR Technology Company</h1>
@@ -310,7 +310,7 @@ export default function HomeHello() {
       </section>
       <div ref={cardRef}></div>
       <ProductCard windowSize={windowSize} />
-    </main>
+    </div>
   );
 }
 

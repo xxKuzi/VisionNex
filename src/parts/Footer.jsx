@@ -1,32 +1,32 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useData } from "./Memory";
 
 export default function Footer() {
   const { windowSize } = useData();
 
   return (
-    <div className="mt-32">
+    <footer className="mt-32 w-full">
       {windowSize !== 2 && (
         <div className="w-full bg-gray-200 flex justify-between text-gray-500 px-4 py-2">
           <div className="w-3/12">
-            <a href="/">
-              <img className="h-8" src="logo eye nobg.png" />
+            <a href="/" aria-label="VisionNex Home">
+              <img className="h-8" src="logo eye nobg.png" alt="" aria-hidden="true" />
             </a>
           </div>
-          <div className="flex items-center justify-center text-sm gap-10">
-            <a href="/">
-              <p className="hover:text-blue-400 duration-300">Home</p>
+          <nav className="flex items-center justify-center text-sm gap-10" aria-label="Footer Navigation">
+            <a className="hover:text-blue-400 duration-300" href="/">
+              Home
             </a>
             <a className="hover:text-blue-400 duration-300" href="/product">
-              <p>Product</p>
+              Product
             </a>
             <a className="hover:text-blue-400 duration-300" href="/references">
-              <p>References</p>
+              References
             </a>
             <a className="hover:text-blue-400 duration-300" href="/team">
-              <p>Team</p>
+              Team
             </a>
-          </div>
+          </nav>
           <div className="flex w-3/12 justify-end items-center lg:text-base text-sm">
             <p>
               Developed by <span className="font-semibold">VisionNex</span>
@@ -37,8 +37,8 @@ export default function Footer() {
       {windowSize === 2 && (
         <div className="w-full bg-gray-200 flex justify-between items-center text-gray-500 px-2 py-2 flex-wrap">
           <div className="flex-shrink-0">
-            <a href="/">
-              <img src="logo eye nobg.png" className="h-8" />
+            <a href="/" aria-label="VisionNex Home">
+              <img src="logo eye nobg.png" className="h-8" alt="" aria-hidden="true" />
             </a>
           </div>
           <div className="flex justify-end items-center flex-shrink-0">
@@ -48,6 +48,6 @@ export default function Footer() {
           </div>
         </div>
       )}
-    </div>
+    </footer>
   );
 }

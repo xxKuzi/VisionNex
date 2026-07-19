@@ -27,12 +27,12 @@ export default function Team() {
     },
   ];
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center">
       {windowSize !== 2 && (
         <div className="flex flex-col items-center justify-center min-h-screen">
-          <p className="mt-6 text-center headline__big font-semibold">
+          <h1 className="mt-6 text-center headline__big font-semibold">
             Our Team
-          </p>
+          </h1>
           <div className="mt-6 mx-auto p-8 flex justify-center border-2 rounded-xl gap-6 flex-wrap">
             {data.map((item, i) => (
               <Card
@@ -52,7 +52,7 @@ export default function Team() {
 
       {windowSize === 2 && (
         <div className="flex flex-col items-center justify-center">
-          <p className="mt-6 text-center text-4xl font-semibold">Our Team</p>
+          <h1 className="mt-6 text-center text-4xl font-semibold">Our Team</h1>
           <div className="mt-6 mx-auto p-8 flex justify-center border-2 rounded-xl gap-6 flex-wrap">
             {data.map((item, i) => (
               <Card
@@ -74,18 +74,21 @@ export default function Team() {
 const Card = (props) => {
   const { name, area, image, ig } = props;
 
-  const openInNewTab = (url) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
   return (
     <div className="border-2 rounded-xl border-blue-400 p-4 flex flex-col items-center justify-center">
-      <img className="h-64" src={image} />
+      <img className="h-64 rounded-lg" src={image} alt={`Portrait of ${name}`} />
       <p className="mt-6 headline">{name}</p>
       <p className="mt-2">{area}</p>
-      <div className="flex items-center">
-        <button onClick={() => openInNewTab("https://instagram.com/" + ig)}>
-          <p>@{ig}</p>
-        </button>
+      <div className="flex items-center mt-2">
+        <a 
+          href={"https://instagram.com/" + ig} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-blue-500 hover:underline hover:text-blue-600 focus-visible:outline focus-visible:outline-blue-500 rounded px-1"
+          aria-label={`${name}'s Instagram @${ig}`}
+        >
+          @{ig}
+        </a>
       </div>
     </div>
   );

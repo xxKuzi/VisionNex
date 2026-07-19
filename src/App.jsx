@@ -9,13 +9,18 @@ import Footer from "./parts/Footer";
 function App() {
   return (
     <>
+      <a href="#main-content" className="skip-link sr-only focus:not-sr-only">
+        Skip to main content
+      </a>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/references" element={<References />} />
-        <Route path="/team" element={<Team />} />
-      </Routes>
+      <main id="main-content" tabIndex="-1" className="outline-none">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/references" element={<References />} />
+          <Route path="/team" element={<Team />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );

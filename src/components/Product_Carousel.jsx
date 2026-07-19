@@ -81,19 +81,22 @@ const Carousel = ({ data }) => {
           } rounded-full`}
           onClick={prevSlide}
           disabled={currentIndex === 0}
+          aria-label="Previous slide"
         >
           <FaArrowLeft />
         </button>
 
-        <div className="px-16 flex">
+        <div className="px-16 flex items-center">
           {data.map((_, index) => (
-            <div
+            <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`cursor-pointer w-2 h-2 mx-[6px] rounded-full ${
+              className={`w-2 h-2 mx-[6px] rounded-full focus-visible:ring-2 focus-visible:ring-blue-500 focus:outline-none ${
                 index === currentIndex ? "bg-black" : "bg-gray-300"
               }`}
-            ></div>
+              aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === currentIndex ? "true" : undefined}
+            />
           ))}
         </div>
 
@@ -103,6 +106,7 @@ const Carousel = ({ data }) => {
           } rounded-full`}
           onClick={nextSlide}
           disabled={currentIndex === data.length - 1}
+          aria-label="Next slide"
         >
           <FaArrowRight />
         </button>
@@ -115,7 +119,7 @@ const Card = (props) => {
   const { category, title, image, text, position } = props.cardData;
   return (
     <div
-      className="flex hover:scale-[102%] duration-300 px-4 py-2 w-full h-[500px] flex-col bg-cover justify-start items-lefts border-2 rounded-xl"
+      className="flex hover:scale-[102%] duration-300 px-4 py-2 w-full h-[500px] flex-col bg-cover justify-start items-left border-2 rounded-xl"
       style={{
         backgroundImage: `url(${image})`,
         backgroundPosition:
@@ -123,6 +127,7 @@ const Card = (props) => {
         color: text === 1 ? "white" : "black",
       }}
     >
+      <span className="sr-only">Feature illustration: {title}</span>
       <p>{category}</p>
       <p className="headline__small font-semibold">{title}</p>
     </div>

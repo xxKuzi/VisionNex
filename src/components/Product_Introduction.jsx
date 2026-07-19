@@ -111,12 +111,12 @@ export default function Product_Introduction() {
         className="flex flex-col items-center justify-center h-[500px]
       "
       >
-        <p
+        <h1
           ref={textRef}
-          className={"opacity-0 scale-50 md:mt-32 md:text-9xl text-6xl"}
+          className={"opacity-0 scale-50 md:mt-32 md:text-9xl text-6xl font-normal"}
         >
           Vision Nexes
-        </p>
+        </h1>
 
         <div className="md:h-[700px] h-[300px]"></div>
         <p className="roll opacity-0 scale-75 text-lg md:text-3xl">

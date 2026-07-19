@@ -63,19 +63,20 @@ const References_Timeline = ({ data }) => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full mt-[170px]">
+    <div className="flex items-center justify-center w-full mt-[170px]" aria-label="Timeline Section">
       <div className="relative items-center flex flex-col">
-        <div className="h-2 absolute lg:top-3 md:top-[10px] top-[6px] w-[80vw] md:w-[70vw] bg-gray-300"></div>
-        <div className="flex justify-between w-[92vw] md:w-[82vw]">
+        <div className="h-2 absolute lg:top-3 md:top-[10px] top-[6px] w-[80vw] md:w-[70vw] bg-gray-300" aria-hidden="true"></div>
+        <ol className="flex justify-between w-[92vw] md:w-[82vw] list-none" aria-label="Development milestones timeline">
           {data.map((item, index) => (
-            <div
+            <li
               key={index}
               ref={(el) => (bubblesRef.current[index] = el)}
               className="flex flex-col items-center md:w-[12vw] w-[14vw]"
             >
-              <div className="lg:w-8 lg:h-8 md:w-7 md:h-7 w-5 h-5 bg-blue-500 rounded-full"></div>
+              <div className="lg:w-8 lg:h-8 md:w-7 md:h-7 w-5 h-5 bg-blue-500 rounded-full" aria-hidden="true"></div>
               <div className="mt-2 text-xs text-center text-gray-700">
                 <p className="lg:text-base md:text-sm text-[10px]">
+                  <span className="sr-only">Date: </span>
                   {windowSize !== 2
                     ? item.year
                     : item.year.split(" ").length > 1
@@ -84,12 +85,13 @@ const References_Timeline = ({ data }) => {
                     : item.year}
                 </p>
                 <div className="font-bold md:text-lg text-[10px] md:mt-1">
+                  <span className="sr-only">Event: </span>
                   {item.event}
                 </div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </div>
   );

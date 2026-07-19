@@ -29,11 +29,11 @@ const References_Journey = ({ data }) => {
   }, [data]);
 
   return (
-    <div className="flex flex-col items-center md:space-y-16 xl:space-y-[80px] space-y-10 mt-10">
+    <ol className="flex flex-col items-center md:space-y-16 xl:space-y-[80px] space-y-10 mt-10 w-full">
       {data.map((item, index) => (
-        <div
+        <li
           key={index}
-          className="md:h-[40vh] xl:h-[60vh] xl:w-[50vw] h-[30vh] w-[87vw] relative rounded-lg"
+          className="md:h-[40vh] xl:h-[60vh] xl:w-[50vw] h-[30vh] w-[87vw] relative rounded-lg list-none"
           style={{
             backgroundImage: `url(${item.image})`,
             backgroundPosition: "center",
@@ -41,6 +41,7 @@ const References_Journey = ({ data }) => {
             backgroundRepeat: "no-repeat", // Prevents image repetition
           }}
         >
+          <span className="sr-only">Milestone photo: {item.event}</span>
           <div
             ref={(el) => (timelineRef.current[index] = el)}
             className="flex flex-col items-center absolute -bottom-2 right-2 bg-white rounded-lg md:p-6 px-4 py-3 shadow-md"
@@ -48,9 +49,9 @@ const References_Journey = ({ data }) => {
             <div className="text text-gray-600">{item.year}</div>
             <div className="headline__extraSmall font-bold">{item.event}</div>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ol>
   );
 };
 
