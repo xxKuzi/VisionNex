@@ -33,18 +33,18 @@ const References_Journey = ({ data }) => {
       {data.map((item, index) => (
         <li
           key={index}
-          className="md:h-[40vh] xl:h-[60vh] xl:w-[50vw] h-[30vh] w-[87vw] relative rounded-lg list-none"
-          style={{
-            backgroundImage: `url(${item.image})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover", // Ensures the whole image is visible
-            backgroundRepeat: "no-repeat", // Prevents image repetition
-          }}
+          className="md:h-[40vh] xl:h-[60vh] xl:w-[50vw] h-[30vh] w-[87vw] relative rounded-lg list-none overflow-hidden"
         >
-          <span className="sr-only">Milestone photo: {item.event}</span>
+          <img
+            src={item.image}
+            alt={`Milestone photo: ${item.event}`}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchpriority={index === 0 ? "high" : "low"}
+          />
           <div
             ref={(el) => (timelineRef.current[index] = el)}
-            className="flex flex-col items-center absolute -bottom-2 right-2 bg-white rounded-lg md:p-6 px-4 py-3 shadow-md"
+            className="flex flex-col items-center absolute -bottom-2 right-2 bg-white rounded-lg md:p-6 px-4 py-3 shadow-md z-10"
           >
             <div className="text text-gray-600">{item.year}</div>
             <div className="headline__extraSmall font-bold">{item.event}</div>

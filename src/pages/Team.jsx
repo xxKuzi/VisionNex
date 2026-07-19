@@ -10,19 +10,19 @@ export default function Team() {
     {
       name: "Jakub Aldorf",
       area: "Vývoj | Software | Hardware",
-      image: "aldy.jpg",
+      image: "aldy.webp",
       ig: "jakubaldorf",
     },
     {
       name: "Patrik Švoma",
       area: "Hardware | Modelování | 3D Tisk",
-      image: "patas.jpg",
+      image: "patas.webp",
       ig: "patriksvoma",
     },
     {
       name: "Jakub Kužel",
       area: "Design | Software | Marketing",
-      image: "kuzi.png",
+      image: "kuzi.webp",
       ig: "kuba.kuzi",
     },
   ];

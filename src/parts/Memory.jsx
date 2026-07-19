@@ -33,26 +33,26 @@ export function Memory({ children }) {
       {
         title: "One Charge, Hours of Use",
         category: "Energy",
-        image: "battery.jpg",
+        image: "battery.webp",
         text: 1,
       },
       {
         title: "Listen through anything you want",
         category: "Connectivity",
-        image: "connectivity.jpg",
+        image: "connectivity.webp",
         position: 30,
         text: 0,
       },
       {
         title: "Smooth experience",
         category: "Performance",
-        image: "performance.jpg",
+        image: "performance.webp",
         text: 1,
       },
       {
         title: "Charge with USB-C",
         category: "Charging",
-        image: "usb-c.jpg",
+        image: "usb-c.webp",
         text: 0,
       },
     ],
@@ -64,7 +64,7 @@ export function Memory({ children }) {
         source: "samsung.com",
 
         link: "https://news.samsung.com/cz/nejlepsi-mladi-inovatori-se-utkali-ve-finale-programu-solve-for-tomorrow",
-        image: "samsung.jpg",
+        image: "samsung.webp",
         position: 100,
         text: 0,
       },
@@ -86,7 +86,7 @@ export function Memory({ children }) {
         source: "ct24.cz",
 
         link: "https://ct24.ceskatelevize.cz/video/studenti-vymysleli-chytre-bryle-pro-nevidome-225707",
-        image: "ct24.png",
+        image: "ct24.webp",
         position: 50,
         text: 0,
       },
@@ -96,7 +96,7 @@ export function Memory({ children }) {
         source: "refresher.cz",
 
         link: "https://news.refresher.cz/158627-Umela-inteligence-v-rukou-stredoskolaku-Svymi-projekty-pomahaji-seniorum-autistum-i-nevidomym",
-        image: "zdarskydenik.jpg",
+        image: "zdarskydenik.webp",
         position: 50,
         text: 0,
       },
@@ -116,7 +116,7 @@ export function Memory({ children }) {
         source: "aktuality.sk",
 
         link: "https://www.aktuality.sk/clanok/Zm33DHL/unikatny-napad-stredoskolakov-vymysleli-okuliare-pre-nevidomych-predstavili-ich-priamo-v-parizi-pocas-paralympiady/",
-        image: "aktuality.png",
+        image: "aktuality.webp",
         position: 50,
         text: 0,
       },
@@ -125,7 +125,7 @@ export function Memory({ children }) {
         source: "news.samsung.com",
 
         link: "https://news.samsung.com/cz/samsung-predstavuje-viteze-prvniho-evropskeho-kola-souteze-solve-for-tomorrow-vyhrali-i-cesi",
-        image: "europe_2.png",
+        image: "europe_2.webp",
         text: 0,
         position: 50,
       },
@@ -137,7 +137,7 @@ export function Memory({ children }) {
         source: "linkedin.com",
 
         link: "https://www.linkedin.com/posts/samsung-electronics-czech-republic-slovakia_solve-for-tomorrow-v%C3%ADt%C4%9Bzn%C3%BD-t%C3%BDm-visionnex-activity-7241798986695589888-QPPU/?originalSubdomain=cz",
-        image: "linkedin.png",
+        image: "linkedin.webp",
         position: 50,
         text: 1,
       },
@@ -146,7 +146,7 @@ export function Memory({ children }) {
         source: "news.samsung.com",
 
         link: "https://news.samsung.com/cz/samsung-zna-finalisty-prvniho-celoevropskeho-kola-souteze-solve-for-tomorrow-jsou-mezi-nimi-cesi",
-        image: "europe.png",
+        image: "europe.webp",
         text: 0,
       },
 
@@ -156,7 +156,7 @@ export function Memory({ children }) {
         source: "Žďárský deník",
 
         link: "https://zdarsky.denik.cz/zpravy_region/skolaci-ze-zdaru-vymysleli-chytre-bryle-pro-nevidome-svet-meni-ve-zvuk-20240507.html",
-        image: "zdarskydenik.jpg",
+        image: "zdarskydenik.webp",
         position: 1,
         text: 0,
       },
@@ -166,7 +166,7 @@ export function Memory({ children }) {
         source: "solvefortomorrow.cz",
 
         link: "https://www.solvefortomorrow.cz/rocniky/2023/",
-        image: "sft.jpg",
+        image: "sft.webp",
         text: 1,
       },
 
@@ -175,7 +175,7 @@ export function Memory({ children }) {
         source: "ceskaocnioptika.cz",
 
         link: "https://www.ceskaocnioptika.cz/2024/05/20/hlasove-bryle-pro-nevidome/",
-        image: "zdarskydenik.jpg",
+        image: "zdarskydenik.webp",
         position: 90,
         text: 0,
       },
@@ -185,7 +185,7 @@ export function Memory({ children }) {
         source: "3pol.cz",
 
         link: "https://www.3pol.cz/cz/rubriky/studenti/3119-ai-v-rukach-teenageru",
-        image: "3pol.jpeg",
+        image: "3pol.webp",
 
         text: 1,
       },
@@ -195,31 +195,31 @@ export function Memory({ children }) {
         year: "September 2023",
         event: "Creating of an idea",
         text: "at this time we wasn't sure what we want",
-        image: "thinking.jpg",
+        image: "thinking.webp",
         position: { x: 10, y: 10 },
       },
       {
         year: "February 2024",
         event: "Working model",
         text: "at this time we wasn't sure what we want",
-        image: "zdarskydenik.jpg",
+        image: "zdarskydenik.webp",
       },
-      { year: "April 2024", event: "Winning in SFT", image: "sft.jpg" },
+      { year: "April 2024", event: "Winning in SFT", image: "sft.webp" },
       {
         year: "June 2024",
         event: "JA Award Cerenomy",
         text: "at this time we wasn't sure what we want",
-        image: "ja.jpg",
+        image: "ja.webp",
       },
       {
         year: "September 2024",
         event: "Testing in Paris with Heejin",
-        image: "paris.jpg",
+        image: "paris.webp",
       },
       {
         year: "October 2025",
         event: "Winning in European Samsung SFT ",
-        image: "europe_2.png",
+        image: "europe_2.webp",
       },
     ],
     timeline: [

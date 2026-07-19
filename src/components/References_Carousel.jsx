@@ -126,15 +126,23 @@ const Card = (props) => {
       aria-label={`Read article: ${title} from ${source}`}
     >
       <div
-        className="flex hover:scale-[102%] duration-300 px-4 py-2 w-full h-[500px] flex-col bg-cover justify-between items-start border-2 rounded-xl"
+        className="flex hover:scale-[102%] duration-300 px-4 py-2 w-full h-[500px] flex-col justify-between items-start border-2 rounded-xl relative overflow-hidden"
         style={{
-          backgroundImage: `url(${image})`,
-          backgroundPosition:
-            position > 0 ? `${position}% ${100 - position}%` : "0% 100%",
           color: text === 1 ? "white" : "black",
         }}
       >
-        <div className="bg-white rounded-xl px-2 py-1">
+        <img
+          src={image}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+          style={{
+            objectPosition:
+              position > 0 ? `${position}% ${100 - position}%` : "0% 100%",
+          }}
+          loading={props.active ? "eager" : "lazy"}
+          fetchpriority={props.active ? "high" : "low"}
+        />
+        <div className="bg-white rounded-xl px-2 py-1 z-10">
           <p className="text-black">{source}</p>
         </div>
         <p
@@ -158,7 +166,7 @@ const Card = (props) => {
                   border: "3px solid " + (text === 1 ? "black" : "white"),
                 }
           }
-          className="headline__small font-bold rounded-xl px-2 py-1"
+          className="headline__small font-bold rounded-xl px-2 py-1 z-10"
         >
           {title}
         </p>

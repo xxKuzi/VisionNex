@@ -7,7 +7,7 @@ export default function Home_Card() {
     <div>
       {windowSize === 0 && (
         <div className="border-2 mt-64 rounded-xl w-[50vw] flex px-6 py-4 flex-col justify-center items-center">
-          <img src="glasses.png" className="w-[30vw]" />
+          <img src="glasses.webp" className="w-[30vw]" fetchpriority="high" alt="VisionNex Smart Glasses" />
           <p className="mt-4 text-7xl">Vision Nexes</p>
           <p className="mt-4">Our latest product</p>
           <a href="/product">
@@ -20,7 +20,7 @@ export default function Home_Card() {
 
       {windowSize !== 0 && (
         <div className="border-2 rounded-xl w-[85vw] flex px-6 py-4 flex-col justify-center items-center">
-          <img src="glasses.png" className="w-[60vw]" />
+          <img src="glasses.webp" className="w-[60vw]" fetchpriority="high" alt="VisionNex Smart Glasses" />
           <p className="mt-4 text-4xl md:text-7xl">Vision Nexes</p>
           <p className="mt-4 md:text-xl">Our latest product</p>
           <a href="/product">

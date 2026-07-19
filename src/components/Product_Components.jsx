@@ -44,37 +44,43 @@ export default function Product_Components() {
         <div className="flex z-0 w-32 component-container relative items-center justify-center">
           <img
             className="component absolute -top-[15vh] left-[30vw]"
-            src="camera.png"
+            src="camera.webp"
             alt="Camera sensor hardware"
+            loading="lazy"
           ></img>
           <img
             className="component absolute -top-[15vh] -left-[30vw]"
-            src="battery.png"
+            src="battery.webp"
             alt="Rechargeable battery power unit"
+            loading="lazy"
           ></img>
           <img
             className="component absolute top-[25vh] -left-[25vw]"
-            src="elevenlabs.png"
+            src="elevenlabs.webp"
             alt="ElevenLabs AI voice integration"
+            loading="lazy"
           ></img>
           <img
             className="component absolute top-[20vh] left-[25vw]"
-            src="chatgpt.png"
+            src="chatgpt.webp"
             alt="ChatGPT artificial intelligence model"
+            loading="lazy"
           ></img>
           <img
             className="component absolute -z-10 top-[40vh] left-[15vw]"
-            src="esp32.png"
+            src="esp32.webp"
             alt="ESP32 microcontroller processing unit"
+            loading="lazy"
           ></img>
         </div>
       </div>
 
       <img
         className="w-[40vw] md:w-[35vw] xl:w-[20vw] z-10 scale-0 lg:mt-0 md:mt-12 mt-[100px]"
-        src="glasses.png"
+        src="glasses.webp"
         ref={boxRef}
         alt="Assembled VisionNex Smart Glasses prototype"
+        loading="lazy"
       />
     </div>
   );

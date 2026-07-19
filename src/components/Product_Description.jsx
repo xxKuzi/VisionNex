@@ -57,14 +57,14 @@ export default function Product_Description() {
             <h3 className="headline text-7xl font-normal">Vision to your ears</h3>
             <div className="flex items-center mt-16 justify-center gap-4">
               <div className="flex flex-col items-center justify-center">
-                <img className="rounded-xl" src="glasses vision.jpg" alt="A person wearing VisionNex smart glasses outdoors" />
+                <img className="rounded-xl" src="glasses vision.webp" alt="A person wearing VisionNex smart glasses outdoors" loading="lazy" />
                 <p className="text mt-6 text-xl text-center">
                   Capture reality through a camera
                 </p>
               </div>
-              <img className="h-32" src="arrow.png" alt="" aria-hidden="true" />
+              <img className="h-32" src="arrow.webp" alt="" aria-hidden="true" loading="lazy" />
               <div className="flex flex-col items-center justify-center">
-                <img className="w-64 rounded-xl" src="headphones.jpg" alt="Over-ear headphones playing audio descriptions" />
+                <img className="w-64 rounded-xl" src="headphones.webp" alt="Over-ear headphones playing audio descriptions" loading="lazy" />
                 <p className="text mt-6 text-xl text-center">
                   Play the description in the headphones
                 </p>
@@ -88,16 +88,17 @@ export default function Product_Description() {
               <div className="flex flex-col items-center justify-center">
                 <img
                   className="rounded-xl w-[300px]"
-                  src="glasses vision.jpg"
+                  src="glasses vision.webp"
                   alt="A person wearing VisionNex smart glasses outdoors"
+                  loading="lazy"
                 />
                 <p className="text mt-2 text-lg text-center">
                   Capture reality through a camera
                 </p>
               </div>
-              <img className="h-32 rotate-90" src="arrow.png" alt="" aria-hidden="true" />
+              <img className="h-32 rotate-90" src="arrow.webp" alt="" aria-hidden="true" loading="lazy" />
               <div className="flex flex-col items-center justify-center">
-                <img className="w-64 rounded-xl" src="headphones.jpg" alt="Over-ear headphones playing audio descriptions" />
+                <img className="w-64 rounded-xl" src="headphones.webp" alt="Over-ear headphones playing audio descriptions" loading="lazy" />
                 <p className="text mt-6 text-lg text-center">
                   Play the description in the headphones
                 </p>
