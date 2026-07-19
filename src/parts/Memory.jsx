@@ -204,10 +204,10 @@ export function Memory({ children }) {
         text: "at this time we wasn't sure what we want",
         image: "zdarskydenik.webp",
       },
-      { year: "April 2024", event: "Winning in SFT", image: "sft.webp" },
+      { year: "April 2024", event: "Winning Czech National SFT", image: "sft.webp" },
       {
         year: "June 2024",
-        event: "JA Award Cerenomy",
+        event: "JA Award Ceremony",
         text: "at this time we wasn't sure what we want",
         image: "ja.webp",
       },
@@ -218,7 +218,7 @@ export function Memory({ children }) {
       },
       {
         year: "October 2025",
-        event: "Winning in European Samsung SFT ",
+        event: "Winning European Samsung SFT ",
         image: "europe_2.webp",
       },
     ],
