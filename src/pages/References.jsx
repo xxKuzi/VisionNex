@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import SEO from "../components/SEO";
 import Journey from "../components/References_Journey";
 import Articles from "../components/References_Articles";
 import Timeline from "../components/References_Timeline";
@@ -6,10 +7,25 @@ import Carousel from "../components/References_Carousel";
 import { useData } from "../parts/Memory";
 
 export default function References() {
-  const { data, windowSize } = useData();
+  const { data } = useData();
+
+  const referencesJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "VisionNex Press & Media References",
+    "description": "Media articles, European awards, and press coverage of VisionNex smart assistive glasses.",
+    "url": "https://visionnex.cz/references"
+  };
 
   return (
     <div>
+      <SEO
+        title="VisionNex Media References - Press Coverage, Awards & SFT European Winners"
+        description="Discover how VisionNex won Samsung Solve for Tomorrow Europe, featured on ČT24, Aktuality.sk, Samsung Newsroom, and Czech media."
+        keywords="VisionNex references, Solve for Tomorrow winner, Samsung award, ČT24 VisionNex, assistive technology news, Czech tech startup"
+        canonical="https://visionnex.cz/references"
+        jsonLd={referencesJsonLd}
+      />
       <div className="flex flex-col items-center justify-center overflow-x-hidden">
         <div className="flex flex-col w-[85vw] lg:w-[70vw] mt-8 items-start justify-center">
           <p className="ml-1">How we got there?</p>

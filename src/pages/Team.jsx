@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
+import SEO from "../components/SEO";
 import { useData } from "../parts/Memory";
+
 export default function Team() {
   const { windowSize } = useData();
 
-  useEffect(() => {
-    console.log(windowSize);
-  });
-  const data = [
+  const teamData = [
     {
       name: "Jakub Aldorf",
       area: "Vývoj | Software | Hardware",
@@ -26,15 +25,37 @@ export default function Team() {
       ig: "kuba.kuzi",
     },
   ];
+
+  const teamJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VisionNex Team",
+    "url": "https://visionnex.cz/team",
+    "member": teamData.map((member) => ({
+      "@type": "Person",
+      "name": member.name,
+      "jobTitle": member.area,
+      "image": `https://visionnex.cz/${member.image}`,
+      "sameAs": `https://instagram.com/${member.ig}`
+    }))
+  };
+
   return (
     <div className="flex flex-col items-center">
+      <SEO
+        title="VisionNex Team - Student Founders & Tech Innovators"
+        description="Meet the creators of VisionNex: Jakub Aldorf, Patrik Švoma, and Jakub Kužel. Developing assistive smart glasses for the visually impaired."
+        keywords="VisionNex team, Jakub Aldorf, Patrik Švoma, Jakub Kužel, Czech student innovators, assistive tech creators"
+        canonical="https://visionnex.cz/team"
+        jsonLd={teamJsonLd}
+      />
       {windowSize !== 2 && (
         <div className="flex flex-col items-center justify-center min-h-screen">
           <h1 className="mt-6 text-center headline__big font-semibold">
             Our Team
           </h1>
           <div className="mt-6 mx-auto p-8 flex justify-center border-2 rounded-xl gap-6 flex-wrap">
-            {data.map((item, i) => (
+            {teamData.map((item, i) => (
               <Card
                 key={i}
                 name={item.name}
@@ -54,7 +75,7 @@ export default function Team() {
         <div className="flex flex-col items-center justify-center">
           <h1 className="mt-6 text-center text-4xl font-semibold">Our Team</h1>
           <div className="mt-6 mx-auto p-8 flex justify-center border-2 rounded-xl gap-6 flex-wrap">
-            {data.map((item, i) => (
+            {teamData.map((item, i) => (
               <Card
                 key={i}
                 name={item.name}
@@ -76,7 +97,7 @@ const Card = (props) => {
 
   return (
     <div className="border-2 rounded-xl border-blue-400 p-4 flex flex-col items-center justify-center">
-      <img className="h-64 rounded-lg" src={image} alt={`Portrait of ${name}`} />
+      <img className="h-64 rounded-lg" src={image} alt={`Portrait of ${name}`} width="256" height="256" />
       <p className="mt-6 headline">{name}</p>
       <p className="mt-2">{area}</p>
       <div className="flex items-center mt-2">

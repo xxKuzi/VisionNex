@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import SEO from "../components/SEO";
 import Introduction from "../components/Product_Introduction";
 import Cards from "../components/Product_Cards";
 import Components from "../components/Product_Components";
@@ -17,7 +18,6 @@ export default function Product() {
       if (window.scrollY <= 150) {
         smoothScrollTo(sectionRef.current, 1000);
       }
-      0;
     }, 3000);
   }, []);
 
@@ -46,17 +46,29 @@ export default function Product() {
     requestAnimationFrame(animation);
   };
 
-  const Box = ({ w, h, tx }) => (
-    <div
-      className="border-2 w-32 justify-center flex flex-col items-center"
-      style={{ height: `${h}px`, width: `${w}px` }}
-    >
-      {tx}
-    </div>
-  );
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "VisionNex Smart Glasses",
+    "image": "https://visionnex.cz/glasses.webp",
+    "description": "Camera-based audio description device that transforms visual information into clear speech for enhanced independence.",
+    "brand": {
+      "@type": "Brand",
+      "name": "VisionNex"
+    },
+    "category": "Assistive Technology",
+    "url": "https://visionnex.cz/product"
+  };
 
   return (
     <div className="flex flex-col items-center justify-center overflow-x-hidden">
+      <SEO
+        title="VisionNex Glasses - Product Specs, Features & 3D Model"
+        description="Explore the VisionNex smart audio glasses. High-performance camera sensors, long battery life, USB-C charging, and intelligent voice description."
+        keywords="VisionNex product, smart glasses features, assistive audio device specs, camera glasses for blind, USB-C smart glasses"
+        canonical="https://visionnex.cz/product"
+        jsonLd={productJsonLd}
+      />
       <div className="flex flex-col items-center justify-center">
         <Components />
         <section ref={sectionRef}>
