@@ -265,11 +265,9 @@ export default function HomeHello() {
     <div className="flex flex-col justify-center items-center w-full">
       {/* Hidden SEO content - invisible but readable by search engines */}
       <div className="sr-only">
-        <h1>Vision Nexes - AR/VR Technology Company</h1>
+        <h1>VisionNex - Assistive Audio Smart Glasses</h1>
         <p>
-          We create cutting-edge augmented and virtual reality solutions,
-          specializing in next-generation smart glasses and immersive digital
-          experiences.
+          VisionNex develops camera-based smart glasses that convert visual information into clear audio descriptions, helping visually impaired individuals navigate their surroundings with independence.
         </p>
       </div>
 
@@ -287,7 +285,7 @@ export default function HomeHello() {
           <img
             className="absolute opacity-0 lg:h-[170px] h-[110px] -right-[35px] lg:-right-[100px] image bottom-[165px]"
             src="logo nobg.png"
-            alt="Vision Nexes company logo"
+            alt="VisionNex logo"
             loading="lazy"
           />
 
@@ -322,17 +320,17 @@ function ProductCard({ windowSize }) {
           <img
             src="glasses.png"
             className="w-[30vw]"
-            alt="Vision Nexes AR Smart Glasses"
+            alt="VisionNex Assistive Smart Glasses"
             loading="lazy"
             width="300"
             height="200"
           />
-          <h4 className="mt-4 text-7xl text">Vision Nexes</h4>
+          <h4 className="mt-4 text-7xl text">VisionNex</h4>
           <p className="mt-4 text">Our latest product</p>
           <a href="/product">
             <button
               className="text text-[15px] bg-white border-2 text-brand active:bg-white active:text-brand border-gray-300 hover:bg-brand hover:text-white duration-300 group-hover:border-brand text-lg button__small mt-4"
-              aria-label="Learn more about Vision Nexes AR glasses"
+              aria-label="Learn more about VisionNex smart glasses"
             >
               Learn more
             </button>
@@ -345,17 +343,17 @@ function ProductCard({ windowSize }) {
           <img
             src="glasses.png"
             className="w-[60vw]"
-            alt="Vision Nexes AR Smart Glasses"
+            alt="VisionNex Assistive Smart Glasses"
             loading="lazy"
             width="600"
             height="400"
           />
-          <h4 className="mt-4 text-4xl md:text-7xl">Vision Nexes</h4>
+          <h4 className="mt-4 text-4xl md:text-7xl">VisionNex</h4>
           <p className="mt-4 md:text-xl">Our latest product</p>
           <a href="/product">
             <button
               className="button__extraSmall border-2 border-brand bg-white text-brand hover:bg-brand hover:text-white md:button__small md:text-xl text-[15px] mt-4 button__positive"
-              aria-label="Learn more about Vision Nexes AR glasses features and specifications"
+              aria-label="Learn more about VisionNex smart glasses features and specifications"
             >
               Learn more
             </button>

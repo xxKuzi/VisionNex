@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
  */
 export default function SEO({
   title = "VisionNex - Vision to Your Ears | Assistive Audio Glasses",
-  description = "Transform what you see into crystal-clear audio descriptions. VisionNex combines advanced camera technology with intelligent audio processing for visual accessibility.",
+  description = "Transform what you see into clear audio descriptions. VisionNex combines advanced camera technology with intelligent audio processing for visual accessibility.",
   keywords = "VisionNex, assistive technology, audio description, visual impairment, smart glasses, accessibility, AI audio glasses",
   canonical = "https://visionnex.cz/",
   ogType = "website",

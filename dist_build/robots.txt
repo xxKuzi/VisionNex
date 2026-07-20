@@ -1,9 +1,0 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Allow: /
-
-# Host
-Host: https://visionnex.cz
-
-# Sitemap Location
-Sitemap: https://visionnex.cz/sitemap.xml
