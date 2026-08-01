@@ -43,6 +43,9 @@ export default function Navbar() {
       }
     };
 
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
     const focusTimeout = setTimeout(() => {
       if (menuRef.current) {
         const focusableElements = menuRef.current.querySelectorAll('a[href], button');
@@ -56,6 +59,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       clearTimeout(focusTimeout);
+      document.body.style.overflow = previousOverflow;
       if (currentTrigger) {
         currentTrigger.focus();
       }
@@ -122,10 +126,21 @@ export default function Navbar() {
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
-          className="flex flex-col-reverse absolute left-0 duration-300 top-0 rounded-md p-8 text-xl w-full h-[50%] z-20 bg-white min-h-[350px]"
+          className="flex flex-col fixed left-0 duration-300 top-0 rounded-b-md p-6 text-xl w-full z-50 bg-white"
         >
+          <div className="flex items-start justify-between mb-6">
+            <img src="logo nobg.png" className="h-16" alt="VisionNex logo" />
+            <button
+              onClick={() => setDropDown(false)}
+              aria-label="Close navigation menu"
+              className="p-2 focus-visible:outline focus-visible:outline-blue-500 rounded-full"
+            >
+              <ImCross className="h-6 w-6 text-black" />
+            </button>
+          </div>
+
           <nav aria-label="Mobile Navigation">
-            <ul className="flex flex-col ml-[5vw] font-semibold gap-4 mb-[5vw] text-2xl">
+            <ul className="flex flex-col font-semibold gap-2 mb-4 text-2xl">
               <li>
                 <Link to="/" onClick={() => setDropDown(false)} className="text-left block py-2 text-black hover:text-blue-500">
                   Home
@@ -148,14 +163,6 @@ export default function Navbar() {
               </li>
             </ul>
           </nav>
-          <button 
-            onClick={() => setDropDown(false)}
-            aria-label="Close navigation menu"
-            className="absolute top-4 right-4 p-2 focus-visible:outline focus-visible:outline-blue-500 rounded-full"
-          >
-            <ImCross className="h-6 w-6 text-black" />
-          </button>
-          <img src="logo nobg.png" className="absolute left-4 top-4 h-16" alt="VisionNex logo" />
         </div>
       )}
     </header>
