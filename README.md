@@ -68,5 +68,6 @@ No environment variables needed — everything here is static content and the
 
 ## License
 
-No LICENSE file is committed to this repo. Shared for portfolio and viewing
-purposes.
+All rights reserved. This repository is shared for portfolio and viewing
+purposes only — no permission is granted to use, copy, modify, or distribute
+it. See [LICENSE](./LICENSE).
