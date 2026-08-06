@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">VisionNex</h1>
-<p align="center"><strong>The interactive site for our smart-glasses project — a 3D model, a storytelling scroll, and the whole build.</strong></p>
+<p align="center"><strong>The interactive site for our smart-glasses project</strong></p>
 
 <p align="center">
   <a href="https://visionnex.cz">visionnex.cz</a>
@@ -11,7 +11,7 @@
 
 > This repo is the **website**, not the glasses firmware. It's the
 > presentation layer for a real hardware project — a scrollable pitch with a
-> 3D model of the glasses you can rotate, built to show judges and visitors
+> 3D model of the glasses you can rotate, built to show visitors
 > what VisionNex actually does.
 
 <table>
@@ -23,11 +23,14 @@
 
 ## What it is
 
-VisionNex started as a hardware project — glasses that read out what's in
-front of you — and this site is how we told that story to a competition
-audience: what the problem is, how the hardware works, and what it looks
-like assembled, without making anyone read a slide deck. It won recognition
-at Samsung's European Solve for Tomorrow.
+VisionNex is a hardware project developing smart glasses designed to help visually impaired individuals better orient themselves in their  surroundings.
+
+With this website we want people to better understands what the problem is, how the hardware works, and what it looks
+like assembled, the journey building it and our milestones.
+
+With this website, we want to help people better understand the problem, how the hardware works, and what it looks like assembled, as well as our journey in building it and our key milestones.
+
+
 
 ## Features
 
@@ -66,4 +69,4 @@ No environment variables needed — everything here is static content and the
 ## License
 
 No LICENSE file is committed to this repo. Shared for portfolio and viewing
-purposes — add one if you want the terms explicit.
+purposes.
