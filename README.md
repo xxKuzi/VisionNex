@@ -45,7 +45,7 @@ With this website, we want to help people better understand the problem, how the
 - **Storytelling photo album** — the build, the team, and the press coverage
 - **Progress timeline** of how the project actually went, not just the highlight reel
 - **Custom carousel** for the gallery sections
-- Fully responsive, built for both a phone in someone's hand and a projector on stage
+- **Fully responsive**, built for both a phone in someone's hand and a projector on stage
 
 ## Tech stack
 
