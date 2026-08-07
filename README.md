@@ -16,10 +16,12 @@
 
 <table>
   <tr>
-    <td width="50%"><img src="./public/ct24.webp" alt="Team member testing the physical VisionNex glasses prototype live on Czech TV channel CT24"><p align="center"><sub>The physical prototype, live on Czech national TV (ČT24)</sub></p></td>
-    <td width="50%"><img src="./public/samsung.jpg" alt="Team member on stage with an award at the Samsung Solve for Tomorrow competition"><p align="center"><sub>On stage at Samsung's Solve for Tomorrow</sub></p></td>
+    <td width="50%"><img src="./public/ct24.webp" alt="Team member testing the physical VisionNex glasses prototype live on Czech TV channel CT24"><p align="center"><sub>The physical prototype as featured on Czech national TV (ČT24)</sub></p></td>
+    <td width="50%"><img src="./public/ja.webp" alt="Team member on stage with an award at the Samsung Solve for Tomorrow competition"><p align="center"><sub>On stage at JA Ceremony</sub></p></td>
   </tr>
 </table>
+
+<br>
 
 ## What it is
 
@@ -30,7 +32,11 @@ like assembled, the journey building it and our milestones.
 
 With this website, we want to help people better understand the problem, how the hardware works, and what it looks like assembled, as well as our journey in building it and our key milestones.
 
+<div align="center">
+<img width="70%" src="./public/site_showcase_1.webp" alt="Team member on stage with an award at the Samsung Solve for Tomorrow competition">
+</div>
 
+<br>
 
 ## Features
 
