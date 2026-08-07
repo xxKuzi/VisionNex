@@ -9,10 +9,7 @@
   <a href="https://visionnex.cz">visionnex.cz</a>
 </p>
 
-> This repo is the **website**, not the glasses firmware. It's the
-> presentation layer for a real hardware project — a scrollable pitch with a
-> 3D model of the glasses you can rotate, built to show visitors
-> what VisionNex actually does.
+
 
 <table>
   <tr>
@@ -25,12 +22,11 @@
 
 ## What it is
 
-VisionNex is a hardware project developing smart glasses designed to help visually impaired individuals better orient themselves in their  surroundings.
+VisionNex is a hardware project developing smart glasses designed to help visually impaired individuals better orient themselves in their surroundings.
 
 With this website we want people to better understands what the problem is, how the hardware works, and what it looks
 like assembled, the journey building it and our milestones.
 
-With this website, we want to help people better understand the problem, how the hardware works, and what it looks like assembled, as well as our journey in building it and our key milestones.
 
 <div align="center">
 <img width="70%" src="./public/site_showcase_1.webp" alt="Team member on stage with an award at the Samsung Solve for Tomorrow competition">
