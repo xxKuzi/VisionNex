@@ -71,4 +71,4 @@ No environment variables needed — everything here is static content and the
 ## License
 
 
-This repository is shared for portfolio and viewing purposes only. You may clone and run the project locally solely to evaluate it. However, no permission is granted to use the code in other projects, modify it, or distribute it. See [LICENSE](./LICENSE).
+This repository is shared for portfolio and viewing purposes only. You may clone and run the project locally to evaluate it. However, no permission is granted to use the code in other projects, modify it, or distribute it. See [LICENSE](./LICENSE).
